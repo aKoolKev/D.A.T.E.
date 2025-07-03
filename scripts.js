@@ -104,7 +104,23 @@ async function step4(){
 
 }
 
+function gcd(a, b) {
+    while (b !== 0) {
+        let t = b;
+        b = a % b;
+        a = t;
+    }
+    return a;
+}
 
+//reduce cycle
+function getRandomCoprime(min, max, coprimeTo) {
+    let num;
+    do {
+        num = Math.floor(Math.random() * (max - min + 1)) + min;
+    } while (gcd(num, coprimeTo) !== 1);
+    return num;
+}
 
 //get random number
 function step3(){
@@ -116,7 +132,7 @@ function step3(){
     document.getElementById("getRandNumBtn").addEventListener('click', ()=>{
         alert("May luck be on your side! 🍀");
         const randNumFieldEl = document.getElementById("randNumField");
-        diceRoll = Math.floor(Math.random() * (100 - 5 + 1)) + 5;
+        diceRoll = getRandomCoprime(5, 100, 16);
         randNumFieldEl.innerText="Your roll: [" + diceRoll + ']';
         randNumFieldEl.style.display="block";
         document.getElementById('step3NextBtn').style.display="block";
