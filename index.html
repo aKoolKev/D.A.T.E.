@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D.A.T.E.</title>
+</head>
+<body>
+
+    <div style="text-align: center;">
+        <h1>D.A.T.E.</h1>
+
+        <p>Welcome to "Dinner, Activity, Treat, & Entertainment" (D.A.T.E.)! Don't know what to do? Don't worry! D.A.T.E will help you decide!</p>
+
+        <hr>
+
+        <!-- STEP 1: Categories -->
+        <div id="step1">
+            <h2>Step 1: Either leave the box empty for default category or type your own custom category!</h2>
+
+        
+            <div class="box1"style="padding: 10px;">
+                <h3 style="margin-top: 50px;">Category 1: DINNER</h3>
+                <input type="text" placeholder="Enter custom category..." id="cat1">
+            </div>
+
+            <div class="box2"style="padding: 10px;">
+                <h3>Category 2: ACTIVITY</h3>
+                <input type="text" placeholder="Enter custom category..."id="cat2">
+            </div>
+
+            <div class="box3"style="padding: 10px;">
+                <h3>Category 3: TREAT</h3>
+                <input type="text" placeholder="Enter custom category..."id="cat3">
+            </div>
+
+            <div class="box4"style="padding: 10px;">
+                <h3>Category 4: ENTERTAINMENT</h3>
+                <input type="text" placeholder="Enter custom category..."id="cat4">
+            </div>
+
+            <button style="margin-top:50px; text-align: center" id="step1Btn">NEXT -></button>
+        </div>
+
+        <!-- STEP 2: Fill categories -->
+        <div id="step2" style="display:none">
+            <h2>Step 2: Each partner takes turn filling out each slot for each category!</h2>
+        
+            <div class="box1"style="padding: 10px;">
+                <h3 style="margin-top: 50px;">Category 1: <span id="step2Cat1"></span> </h3>
+                <div>
+                    <input type="text" id="Cat1Entry1"> <br>
+                    <input type="text" id="Cat1Entry2"> <br>
+                    <input type="text" id="Cat1Entry3"> <br>
+                    <input type="text" id="Cat1Entry4">
+                </div>
+            </div>
+
+            <div class="box1"style="padding: 10px;">
+                <h3 style="margin-top: 50px;">Category 2: <span id="step2Cat2"></span> </h3>
+                <div>
+                    <input type="text" id="Cat2Entry1"> <br>
+                    <input type="text" id="Cat2Entry2"> <br>
+                    <input type="text" id="Cat2Entry3"> <br>
+                    <input type="text" id="Cat2Entry4">
+                </div>
+            </div>
+
+            <div class="box1"style="padding: 10px;">
+                <h3 style="margin-top: 50px;">Category 3: <span id="step2Cat3"></span> </h3>
+                <div>
+                    <input type="text" id="Cat3Entry1"> <br>
+                    <input type="text" id="Cat3Entry2"> <br>
+                    <input type="text" id="Cat3Entry3"> <br>
+                    <input type="text" id="Cat3Entry4">
+                </div>
+            </div>
+
+            <div class="box1"style="padding: 10px;">
+                <h3 style="margin-top: 50px;">Category 4: <span id="step2Cat4"></span> </h3>
+                <div>
+                    <input type="text" id="Cat4Entry1"> <br>
+                    <input type="text" id="Cat4Entry2"> <br>
+                    <input type="text" id="Cat4Entry3"> <br>
+                    <input type="text" id="Cat4Entry4">
+                </div>
+            </div>
+
+            
+
+            <button style="margin-top:50px; text-align: center" id="step2Btn">NEXT -></button>
+        </div>
+
+        <!-- STEP 3: Roll dice -->
+        <div id="step3" style="display:none; text-align: center;">
+            <h2>Step 3: Decide one partner to generate a random number between 5 and 100!</h2>
+            <p style="font-style: italic;">(This will be used to eliminate the category entries until one remains for each category)</p>
+
+            <button id="getRandNumBtn">Get Random Number!</button>
+            <span id="randNumField" style="display: none; margin-top: 25px;"></span>
+            <center><button id="step3NextBtn" style="display: none; margin-top: 50px;">Begin Elimination!</button></center>
+        </div>
+
+        <!-- Step 4: Display result -->
+        <div id="step4" style="display:none">
+            <h2>Step 4: Watch and see the results for each category!</h2>
+
+            <div class="box1"style="padding: 10px;">
+                <h3 style="margin-top: 50px;">Category 1: <span id="step4Cat1"></span> </h3>
+                <div>
+                    <input type="text" disabled id="Step4Cat1Entry1"> <br>
+                    <input type="text" disabled id="Step4Cat1Entry2"> <br>
+                    <input type="text" disabled id="Step4Cat1Entry3"> <br>
+                    <input type="text" disabled id="Step4Cat1Entry4">
+                </div>
+            </div>
+
+            <div class="box1"style="padding: 10px;">
+                <h3 style="margin-top: 50px;">Category 2: <span id="step4Cat2"></span> </h3>
+                <div>
+                    <input type="text" disabled id="Step4Cat2Entry1"> <br>
+                    <input type="text" disabled id="Step4Cat2Entry2"> <br>
+                    <input type="text" disabled id="Step4Cat2Entry3"> <br>
+                    <input type="text" disabled id="Step4Cat2Entry4">
+                </div>
+            </div>
+
+            <div class="box1"style="padding: 10px;">
+                <h3 style="margin-top: 50px;">Category 3: <span id="step4Cat3"></span> </h3>
+                <div>
+                    <input type="text" disabled id="Step4Cat3Entry1"> <br>
+                    <input type="text" disabled id="Step4Cat3Entry2"> <br>
+                    <input type="text" disabled id="Step4Cat3Entry3"> <br>
+                    <input type="text" disabled id="Step4Cat3Entry4">
+                </div>
+            </div>
+
+            <div class="box1"style="padding: 10px;">
+                <h3 style="margin-top: 50px;">Category 4: <span id="step4Cat4"></span> </h3>
+                <div>
+                    <input type="text" disabled id="Step4Cat4Entry1"> <br>
+                    <input type="text" disabled id="Step4Cat4Entry2"> <br>
+                    <input type="text" disabled id="Step4Cat4Entry3"> <br>
+                    <input type="text" disabled id="Step4Cat4Entry4">
+                </div>
+            </div>    
+
+            <center><button style="display: none; margin-top: 50px;" id="step4Btn" onclick="window.location.reload()">Do another one!</button></center>
+
+        </div> 
+
+    </div>
+
+    <hr>
+    
+
+    <script src="scripts.js"></script>
+</body>
+</html>
